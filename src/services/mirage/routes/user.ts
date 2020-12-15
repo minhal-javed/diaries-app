@@ -49,4 +49,4 @@ const Signup=(schema:any,req:Request):AuthResponse | Response=>{
 }
 
 
-export default {Login,Signup}
+export {Login,Signup}
