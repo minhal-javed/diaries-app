@@ -10,7 +10,6 @@ export interface AuthResponse {
     user: User
 }
 
-const Login = (schema: any, req: Request): AuthResponse | Response => {
     const { username, password } = JSON.parse(req.requestBody);
     const user = schema.users.findBy({ username })
     if (!user) {
@@ -31,8 +30,6 @@ const Login = (schema: any, req: Request): AuthResponse | Response => {
 
 }
 
-
-const Signup=(schema:any,req:Request):AuthResponse | Response=>{
     const data=JSON.parse(req.requestBody);
     const exUser=schema.users.findBy({username:data.username})
     if(exUser){
@@ -47,6 +44,3 @@ const Signup=(schema:any,req:Request):AuthResponse | Response=>{
         token
     }
 }
-
-
-export default {Login,Signup}
